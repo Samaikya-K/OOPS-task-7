@@ -1,21 +1,17 @@
-class Contact {
-    String name;
-    String phone;
+class SmartLight:
+    def __init__(self, name):
+        self.name = name
+        self.status = "OFF"
 
-    void setContact(String n, String p) {
-        name = n;
-        phone = p;
-    }
+    def set_status(self, action):
+        self.status = action
 
-    void displayContact() {
-        System.out.println("Contact Saved");
-        System.out.println("Name: " + name);
-        System.out.println("Phone: " + phone);
-    }
+    def display(self):
+        print(f"{self.name} is {self.status}")
 
-    public static void main(String[] args) {
-        Contact contact = new Contact();
-        contact.setContact("Anita", "9876543210");
-        contact.displayContact();
-    }
-}
+name = input("Light Name: ")
+action = input("Action: ").upper()
+
+light = SmartLight(name)
+light.set_status(action)
+light.display()
