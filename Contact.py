@@ -1,17 +1,22 @@
-class SmartLight:
-    def __init__(self, name):
+class Contact:
+
+    def __init__(self, name, phone):
         self.name = name
-        self.status = "OFF"
+        self.phone = phone
 
-    def set_status(self, action):
-        self.status = action
+    def display_contact(self):
+        print("Contact Saved")
+        print("Name:", self.name)
+        print("Phone:", self.phone)
 
-    def display(self):
-        print(f"{self.name} is {self.status}")
 
-name = input("Light Name: ")
-action = input("Action: ").upper()
+# Taking input
+name = input("Contact Name: ")
+phone = input("Phone Number: ")
 
-light = SmartLight(name)
-light.set_status(action)
-light.display()
+# Creating object
+contact = Contact(name, phone)
+
+# Displaying contact information
+contact.display_contact()
+     
